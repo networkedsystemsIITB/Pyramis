@@ -1,0 +1,168 @@
+{
+    "Nausf_UEAuthentication_Authenticate": {
+        "header": {
+            "method": "string",
+            "uri-path": "string",
+            "version": "string"
+        },
+        "supiOrSuci": "string",
+        "servingNetworkName": "string",
+        "amfInstanceId": "string"
+    },
+    "Nausf_UEAuthentication_Authenticate-response": {
+        "header": {
+            "version": "string",
+            "status-code": "int"
+        },
+        "5gAuthData": "5gAuthData",
+        "_links": [
+            "string"
+        ],
+        "authData": "string"
+    },
+    "Nausf_auth": {
+        "header": {
+            "method": "string",
+            "uri-path": "string",
+            "version": "string"
+        },
+        "resStar": "string",
+        "supiOrSuci": "string"
+    },
+    "Nausf_auth-response": {
+        "header": {
+            "version": "string",
+            "status-code": "int"
+        },
+        "authResult": "string",
+        "supi": "string"
+    },
+    "Nudm_UECM_Registration": {
+        "header": {
+            "method": "string",
+            "uri-path": "string",
+            "version": "string"
+        },
+        "supi": "string",
+        "amfInstanceId": "string",
+        "deregCallbackUri": "string",
+        "guami": "gaumi",
+        "ratType": "string"
+    },
+    "Nudm_UECM_Registration-response": {
+        "header": {
+            "version": "string",
+            "status-code": "int"
+        },
+        "supi": "string"
+    },
+    "Nudm_SDM_Get": {
+        "header": {
+            "method": "string",
+            "uri-path": "string",
+            "query": {
+                "plmn-id": "string"
+            },
+            "resource": "string"
+        }
+    },
+    "Nudm_SDM_Get-response": {
+        "header": {
+            "version": "string",
+            "status-code": "int"
+        },
+        "additionalSnssaiData": [
+            "additionalSnssaiDataEl"
+        ],
+        "defaultSingleNssais": [
+            "defaultSingleNssaisEl"
+        ],
+        "singleNssais": [
+            "singleNssaisEl"
+        ]
+    },
+    "Nnrf_disc": {
+        "header": {
+            "method": "string",
+            "uri-path": "string",
+            "version": "string",
+            "query": {
+                "target-nf-type": "string",
+                "requester-nf-type": "string",
+                "service-names": "string"
+            }
+        }
+    },
+    "Nnrf_disc-response": {
+        "header": {
+            "version": "string",
+            "status-code": "int"
+        },
+        "nfInstances": [
+            "nfInstance"
+        ],
+        "validityPeriod": "int"
+    },
+    "additionalSnssaiDataEl": {
+        "requiredAuthnAuthz": "boolean",
+        "support3Gpp": "boolean",
+        "supportNon3Gpp": "boolean"
+    },
+    "singleNssaisEl": {
+        "sd": "string",
+        "sst": "int"
+    },
+    "defaultSingleNssaisEl": {
+        "sd": "string",
+        "sst": "int"
+    },
+    "nfInstance": {
+        "heartBeatTimer": "int",
+        "ip4Addresses": [
+            "string"
+        ],
+        "nfInstanceId": "string",
+        "nfServices": [
+            "nfService"
+        ],
+        "nfStatus": "string",
+        "nfType": "string",
+        "plmn": "plmn"
+    },
+    "nfService": {
+        "ipEndPoints": [
+            "ipEndPointEl"
+        ],
+        "nfServiceStatus": "string",
+        "scheme": "string",
+        "serviceInstanceId": "string",
+        "serviceName": "string",
+        "versions": [
+            "version"
+        ]
+    },
+    "ipEndPointEl": {
+        "ipv4Address": "string",
+        "port": "int",
+        "transport": "string"
+    },
+    "version": {
+        "apiFullVersion": "string",
+        "apiVersionInUri": "string",
+        "expiry": "string"
+    },
+    "guami": {
+        "amfId": "string",
+        "plmnId": "plmn"
+    },
+    "5gAuthData": {
+        "autn": "string",
+        "hxresStar": "string",
+        "kSeaf": "string",
+        "rand": "string"
+    },
+    "plmn": {
+        "mcc": "string",
+        "mnc": "string"
+    }
+}

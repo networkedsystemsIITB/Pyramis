@@ -1,0 +1,147 @@
+{
+    "RAN": {
+        "Interfaces": []
+    },
+    "AMF": {
+        "Interfaces": [
+            {
+                "Name": "N2",
+                "ApplicationProtocol": "NGAP",
+                "MessageType": ["asn"],
+                "TransportProtocol": "SCTP_PROTOCOL",
+                "ConnectionType": "PERSISTENT",
+                "Port": 38412,
+                "Processing": ["ngapIncoming"],
+                "Node": [
+                    "RAN"
+                ]
+            },
+            {
+                "Name": "Namf",
+                "ApplicationProtocol": "HTTP",
+                "MessageType": ["json"],
+                "TransportProtocol": "TCP_PROTOCOL",
+                "ConnectionType": "SHORT",
+                "Port": 65534,
+                "Processing": ["sbiIncomingRequestJSON"],
+                "Node": [
+                    "AUSF",
+                    "UDM",
+                    "SMF"
+                ]
+            }
+        ]
+    },
+    "AUSF": {
+        "Interfaces": [
+            {
+                "Name": "Nausf",
+                "ApplicationProtocol": "HTTP",
+                "MessageType": ["json"],
+                "TransportProtocol": "TCP_PROTOCOL",
+                "ConnectionType": "SHORT",
+                "Port": 65533,
+                "Processing": ["NausfEvent"],
+                "Node": [
+                    "AMF"
+                ]
+            }
+        ]
+    },
+    "UDM": {
+        "Interfaces": [
+            {
+                "Name": "Nudm",
+                "ApplicationProtocol": "HTTP",
+                "MessageType": ["json"],
+                "TransportProtocol": "TCP_PROTOCOL",
+                "ConnectionType": "SHORT",
+                "Port": 65532,
+                "Processing": ["NudmEvent"],
+                "Node": [
+                    "AMF"
+                ]
+            }
+        ]
+    },
+    "NRF": {
+        "Interfaces": [
+            {
+                "Name": "Nnrf",
+                "ApplicationProtocol": "HTTP",
+                "MessageType": ["json"],
+                "TransportProtocol": "TCP_PROTOCOL",
+                "ConnectionType": "SHORT",
+                "Port": 65535,
+                "Processing": ["NnrfEvent"],
+                "Node": [
+                    "AMF",
+                    "SMF"
+                ]
+            }
+        ]
+    },
+    "SMF": {
+        "Interfaces": [
+            {
+                "Name": "Nsmf",
+                "ApplicationProtocol": "HTTP",
+                "MessageType": ["json", "multipart"],
+                "TransportProtocol": "TCP_PROTOCOL",
+                "ConnectionType": "SHORT",
+                "Port": 6666,
+                "Processing": ["sbiIncomingRequestJson", "sbiIncomingRequestMultipart"],
+                "Node": [
+                    "NRF",
+                    "PCF",
+                    "UDM",
+                    "AMF"
+                ]
+            },
+            {
+                "Name": "Nupf",
+                "ApplicationProtocol": "PFCP",
+                "MessageType": ["pfcp"],
+                "TransportProtocol": "UDP_PROTOCOL",
+                "ConnectionType": "SHORT",
+                "Port": 7777,
+                "Processing": ["pfcpIncomingRequest"],
+                "Node": [
+                    "UPF"
+                ]
+            }
+        ]
+    },
+    "PCF": {
+        "Interfaces": [
+            {
+                "Name": "Npcf",
+                "ApplicationProtocol": "HTTP",
+                "MessageType": ["json"],
+                "TransportProtocol": "TCP_PROTOCOL",
+                "ConnectionType": "SHORT",
+                "Port": 65528,
+                "Processing": ["NudmEvent"],
+                "Node": [
+                    "SMF"
+                ]
+            }
+        ]
+    },
+    "UPF": {
+        "Interfaces" : [
+            {
+                "Name": "Nupf",
+                "ApplicationProtocol": "PFCP",
+                "MessageType": ["pfpc"],
+                "TransportProtocol": "UDP_PROTOCOL",
+                "ConnectionType": "SHORT",
+                "Port": 8805,
+                "Processing": ["NupfEvent"],
+                "Node": [
+                    "SMF"
+                ]
+            }
+        ]
+    }
+}

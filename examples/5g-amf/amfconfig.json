@@ -1,0 +1,51 @@
+{
+    "amf-id": "amf1",
+    "AMFName": "AMF 1",
+    "test": 1,
+    "maxNumOfUEsSupported": 10000,
+    "networkName": "3gppnetwork.org",
+    "guamiAndGutiInfo": {
+        "plmn-mcc": 404,
+        "plmn-mnc-size": 2,
+        "plmn-mnc": 0,
+        "amfRegionId": 2,
+        "amfSetId": 254,
+        "amfPointer": 6,
+        "5gTMSI-start": 1,
+        "5gTMSI-number": 10000
+    },
+    "relativeAMFcapacity": 20,
+    "SupportedPLMN": [
+        {
+            "plmn-mcc": 404,
+            "plmn-mnc-size": 2,
+            "plmn-mnc": 0,
+            "S_NSSAI": [
+                {
+                    "default-dnn": "dnn1.slice1.net",
+                    "snssai": {
+                        "sst": 12,
+                        "sd": 13
+                    }
+                }
+            ]
+        }
+    ],
+    "amf-s-nssai-list": {
+        "num-slices": 1,
+        "amf-nssai": [
+            {
+                "snssai": {
+                    "sst": 1,
+                    "SD": 0
+                },
+                "default-dnn-for-smf-selection": "dnn1.slice1.net"
+            }
+        ]
+    },
+    "NFServiceVersion": {
+        "apiVersionInUri": "v1",
+        "apiFullVersion": "1.PreR15.1.0",
+        "expiry": "2020-08-14T02:30:00+05:30"
+    }
+}

@@ -1,0 +1,19 @@
+{
+    "Server": {
+        "Interfaces": [
+            {
+                "Name": "Server",
+                "ApplicationProtocol": "synerp",
+                "MessageType": ["synerp"],
+                "TransportProtocol": "UDP_PROTOCOL",
+                "ConnectionType": "SHORT",
+                "IP": "127.0.0.1",
+                "Port": 5858,
+                "Processing": ["server_entry"],
+                "Peers": [
+                    "Client"
+                ]
+            }
+        ]
+    }
+}

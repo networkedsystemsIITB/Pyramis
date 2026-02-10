@@ -28,8 +28,8 @@ PyPI (Python)
 2. **Analyze, build and run the login-server NF**
 
 .. code-block:: bash
-
-   cd pyramis/examples/login-server/Server
+   
+   cd pyramis/examples/login-server
    pyramis build NF_A
    pyramis run NF_A 1
 
